@@ -1,13 +1,19 @@
 <h1><%= @board.name %></h1> is a cool board
 
 <div data-controller="card">
-  <%= form_with model: @card do |f| %>
-    <%= f.label :text, "Text" %>
-    <%= f.text_field :text , data: { card_target: 'input' } %><br /><br />
-    <%= f.submit 'Make Card', data:  { action: "card#submit" } %>
-  <% end %>
+  <div style="border:5px darkmagenta solid; margin:10px; padding:5px">
+    <h3>Add a reflection: </h3>
+    <%= form_with model: @card do |f| %>
+      <%= f.text_field :text , data: { card_target: 'input' } %><br /><br />
+      <%= f.submit 'Make Card', data:  { action: "card#submit" } %>
+    <% end %>
+  </div>
 
   <div data-card-target='newcard'>
 
   </div>
+
+  <% @cards.each do |card| %>
+    <div style="border:1px teal solid; margin:10px; padding:5px"><%= card.text %></div>
+  <% end %>
 </div>

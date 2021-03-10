@@ -16,7 +16,7 @@ export default class extends Controller {
             data: { card: { text: this.inputTarget.value } },
             type: 'post',
             success: function() {
-                $(stuff).append("<div style=\"border:1px black solid\">" + words + "</div>")
+                $(stuff).append("<div style=\"border:1px black solid; margin:10px; padding:5px\">" + words + "</div>")
             }
         })
     }

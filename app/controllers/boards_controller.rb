@@ -11,6 +11,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @cards = Card.all
     @card = Card.new
 
   end
