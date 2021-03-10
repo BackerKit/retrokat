@@ -1,0 +1,7 @@
+<h1>Hey, you want a board? We'll make you a board for cheap.</h1>
+
+<%= form_with model: @board do |f| %>
+  <%= f.label :name, "Board Name" %>
+  <%= f.text_field :name %><br /><br />
+  <%= f.submit %>
+<% end %>
