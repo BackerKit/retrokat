@@ -3,7 +3,11 @@
 <div data-controller="card">
   <%= form_with model: @card do |f| %>
     <%= f.label :text, "Text" %>
-    <%= f.text_field :text , data: { card_input_value: 'messages' } %><br /><br />
+    <%= f.text_field :text , data: { card_target: 'input' } %><br /><br />
     <%= f.submit 'Make Card', data:  { action: "card#submit" } %>
   <% end %>
+
+  <div data-card-target='newcard'>
+
+  </div>
 </div>

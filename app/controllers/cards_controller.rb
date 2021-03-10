@@ -1,8 +1,7 @@
 class CardsController < ApplicationController
   def create
     Card.create!(text: card_params[:text])
-    render :json, {status: "ok"}
-    # reply with some json?????
+    render json: {status: :ok}
   end
 
   private
