@@ -4,5 +4,10 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
 
+const application = Application.start()
 Rails.start()
+const context = require.context("controllers", true, /.js$/)
+application.load(definitionsFromContext(context))

@@ -1,1 +1,9 @@
 <h1><%= @board.name %></h1> is a cool board
+
+<div data-controller="card">
+  <%= form_with model: @card do |f| %>
+    <%= f.label :text, "Text" %>
+    <%= f.text_field :text , data: { card_input_value: 'messages' } %><br /><br />
+    <%= f.submit 'Make Card', data:  { action: "card#submit" } %>
+  <% end %>
+</div>
